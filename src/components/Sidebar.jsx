@@ -12,33 +12,33 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
       <div className="flex flex-col justify-between h-full ">
         <div>
           <div className=" p-2  border-b-2 border-biruAltera border-dashed m-2">
-            <div className={`h-16 bg-white ${dashboardShadow} rounded-xl flex items-center p-3 m-2`}>
+            <div className={`h-16 bg-white ${dashboardShadow} rounded-xl flex items-center p-3 m-2 hover:shadow-lg`}>
               <div className=" flex items-center  h-full">
-                <div className="flex items-center mr-3  h-full">
+                <div className="flex items-center mr-3  h-full text-biruAltera">
                   <MdDashboard />
                 </div>
                 <h2 className={`text-biruAltera ${dashboardFontStyle} font-Inter`}>Dashboard</h2>
               </div>
             </div>
-            <div className={`${menteeShadow} h-16 rounded-xl flex items-center p-3 m-2`}>
+            <div className={`${menteeShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold`}>
               <div className=" flex items-center  h-full">
-                <div className="flex items-center mr-3  h-full">
+                <div className="flex items-center mr-3  h-full text-biruAltera">
                   <HiUserGroup />
                 </div>
                 <h2 className={`${menteeFontStile} text-biruAltera`}>Mentee</h2>
               </div>
             </div>
-            <div className={`${userShadow} h-16 rounded-xl flex items-center p-3 m-2`}>
+            <div className={`${userShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold`}>
               <div className=" flex items-center  h-full">
-                <div className="flex items-center mr-3  h-full">
+                <div className="flex items-center mr-3  h-full text-biruAltera">
                   <HiUsers />
                 </div>
                 <h2 className={`${userFontStyle} text-biruAltera`}>User</h2>
               </div>
             </div>
-            <div className={`${classShadow} h-16 rounded-xl flex items-center p-3 m-2`}>
+            <div className={`${classShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold`}>
               <div className=" flex items-center  h-full">
-                <div className="flex items-center mr-3  h-full">
+                <div className="flex items-center mr-3  h-full text-biruAltera">
                   <MdClass />
                 </div>
                 <h2 className={`${classFontStyle} text-biruAltera`}>Class</h2>
@@ -48,7 +48,7 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
           <div className="px-4">
             <div className="h-16 rounded-xl flex items-center p-3 m-2">
               <div className=" flex items-center  h-full">
-                <div className="flex items-center mr-3  h-full">
+                <div className="flex items-center mr-3  h-full text-biruAltera">
                   <CgProfile />
                 </div>
                 <h2 className="text-biruAltera">Profile</h2>

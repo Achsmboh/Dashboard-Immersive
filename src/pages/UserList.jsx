@@ -2,9 +2,8 @@ import React from "react";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import { Navbar } from "../components/Navbar";
-import { CostumButtonTwo } from "../components/CostumButton";
-import CardTabel from "../components/CardTabel";
-import Modal from "../components/Modal";
+import { CardTabel } from "../components/CardTabel";
+import { Modal } from "../components/Modal";
 
 function UserList() {
   return (
@@ -47,21 +46,19 @@ function UserList() {
                     </div>
                   </div>
                   <div>
-                    <CardTabel no={1} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={2} name={"Michael Jordan"} email={"michaeljordan@gmail.com"} team={"Placement"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={3} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={4} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={5} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={6} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={7} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={8} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={9} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={10} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={11} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={12} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
-                    <CardTabel no={13} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} background={"abuAltera"} />
+                    <CardTabel no={1} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={2} name={"Michael Jordan"} email={"michaeljordan@gmail.com"} team={"Placement"} role={"user"} status={"active"} />
+                    <CardTabel no={3} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={4} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={5} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={6} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={7} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={8} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={9} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+                    <CardTabel no={10} name={"Jesica World"} email={"jessicaworld@gmail.com"} team={"Akademic"} role={"user"} status={"active"} />
+
+                    {/* Akhir Tabel Header */}
                   </div>
-                  {/* Akhir Tabel Header */}
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ import "../styles/App.css";
 import Layout from "../components/Layout";
 import fotoLogin from "../assets/login.png";
 import Input from "../components/Input";
-import CostumButton from "../components/CostumButton";
+import { CostumButton } from "../components/CostumButton";
 
 function Login() {
   return (
@@ -27,7 +27,7 @@ function Login() {
               <h2 className="text-3xl font-bold text-left w-2/3 ">Welcome Back!</h2>
               <Input placeholder={"Your email"} label={"Email :"} type={"text"} />
               <Input placeholder={"Your Password"} label={"Password"} type={"password"} />
-              <CostumButton />
+              <CostumButton label={"Sign in"} />
             </div>
           </div>
         </div>

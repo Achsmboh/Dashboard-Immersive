@@ -3,7 +3,7 @@ import React from "react";
 const Layout = ({ children }) => {
   return (
     <div className="w-full h-screen bg-biruAltera">
-      <div>{children}</div>
+      <div className="w-full h-full">{children}</div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import "../styles/App.css";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
+import Input from "../components/Input";
 
 function App() {
   return (
@@ -8,8 +9,9 @@ function App() {
       <div className="h-full">
         <div className="grid grid-cols-4">
           <Sidebar />
-
-          <div className="bg-red-400 grid col-span-3">3</div>
+          <div className="grid bg-white col-span-3">
+            <Input label={"Email"} placeholder={"your"} />
+          </div>
         </div>
       </div>
     </Layout>

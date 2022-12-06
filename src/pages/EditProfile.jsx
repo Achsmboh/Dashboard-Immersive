@@ -14,7 +14,7 @@ function EditProfile() {
               <h2 className="text-biruAltera font-Inter font-bold text-2xl">John Doe</h2>
               <p className="text-biruAltera font-Inter ">johndoe@gmail.com</p>
             </div>
-            <div className="w-full p-5 flex items-end h-3/4">
+            <div className="w-full p-5 flex items-end h-3/5">
               <a href={"/dashboard"} className="w-full">
                 <button className="btn w-full normal-case bg-orangeAltera hover:bg-orangeAltera">Back</button>
               </a>

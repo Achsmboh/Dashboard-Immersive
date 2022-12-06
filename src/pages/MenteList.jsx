@@ -3,10 +3,9 @@ import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import { Navbar } from "../components/Navbar";
 import { CardTabel } from "../components/CardTabel";
-import { Modal } from "../components/Modal";
-import Input from "../components/Input";
 import { DropDownTwo, DropDown } from "../components/DropDown";
 import { CostumButtonTwo } from "../components/CostumButton";
+import { Link } from "react-router-dom";
 
 function MenteList() {
   return (
@@ -64,7 +63,9 @@ function MenteList() {
                 </div>
                 {/* Akhir Tabel Header */}
                 <div>
-                  <CardTabel no={1} name={"Jesica World"} email={"Front End 10"} team={"IT"} role={"Male"} status={"active"} />
+                  <Link to={"/mentee-log"}>
+                    <CardTabel no={1} name={"Jesica World"} email={"Front End 10"} team={"IT"} role={"Male"} status={"active"} />
+                  </Link>
                 </div>
               </div>
             </div>

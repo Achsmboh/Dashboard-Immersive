@@ -39,9 +39,9 @@ const CardTabel = ({ name, email, team, role, status, no }) => {
   );
 };
 
-const CardTabelTwo = ({ nameClass, mentor, startClass, endClass, no }) => {
+const CardTabelTwo = ({ nameClass, mentor, startClass, endClass, no, onClick }) => {
   return (
-    <div className={`grid grid-cols-12 mt-5 mb-1 bg-abuAltera  h-12 rounded-lg hover:z-10 transition hover:scale-105 hover:bg-orangeAltera`}>
+    <div className={`grid grid-cols-12 mt-5 mb-1 bg-abuAltera  h-12 rounded-lg hover:z-10 transition hover:scale-105 hover:bg-orangeAltera`} onClick={onClick}>
       <div className=" flex items-center justify-center">
         <p className="text-biruAltera font-Inter font-bold">{no}</p>
       </div>

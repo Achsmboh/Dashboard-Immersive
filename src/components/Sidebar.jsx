@@ -20,7 +20,7 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
                 <h2 className={`text-biruAltera ${dashboardFontStyle} font-Inter `}>Dashboard</h2>
               </div>
             </a>
-            <a className={`${menteeShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold hover:z-10 transition hover:scale-105 `}>
+            <a href="/mentee-list" className={`${menteeShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold hover:z-10 transition hover:scale-105 `}>
               <div className=" flex items-center  h-full">
                 <div className="flex items-center mr-3  h-full text-biruAltera">
                   <HiUserGroup />

@@ -4,6 +4,8 @@ import Sidebar from "../components/Sidebar";
 import { Navbar } from "../components/Navbar";
 import { CardTabel } from "../components/CardTabel";
 import { Modal } from "../components/Modal";
+import Input from "../components/Input";
+import { DropDownTwo } from "../components/DropDown";
 
 function UserList() {
   return (
@@ -19,7 +21,13 @@ function UserList() {
               <div className="bg-white rounded-lg shadow-lg">
                 <div className="p-3">
                   <div className="flex justify-end">
-                    <Modal />
+                    <Modal
+                      title={"Add New User"}
+                      inputOne={<Input label={"Name :"} placeholder={"Name"} type={"text"} />}
+                      inputTwo={<Input label={"Email :"} placeholder={"name@gmail.com"} type={"email"} />}
+                      inputThree={<DropDownTwo name={"Role :"} optionOne={"User"} optionTwo={"Admin"} />}
+                      inputFour={<Input label={"Password :"} type={"password"} placeholder={"password"} />}
+                    />
                   </div>
                   {/* Tabel Header */}
                   <div className=" grid grid-cols-12 mt-5 mb-1">

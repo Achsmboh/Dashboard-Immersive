@@ -40,7 +40,7 @@ function MenteeLog() {
             </a>
 
             <a href="#" className="btn bg-blue-600 normal-case font-Inter border-none mx-1 hover:bg-biruAltera">
-              Add
+              Change
             </a>
           </div>
         </div>

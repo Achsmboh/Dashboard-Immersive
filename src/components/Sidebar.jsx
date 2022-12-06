@@ -45,7 +45,7 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
               </div>
             </a>
           </div>
-          <div className="px-4 hover:z-10 transition hover:scale-105 ">
+          <a href="/edit-profile" className="px-4 hover:z-10 transition hover:scale-105 ">
             <div className="h-16 rounded-xl flex items-center p-3 m-2">
               <div className=" flex items-center  h-full">
                 <div className="flex items-center mr-3  h-full text-biruAltera">
@@ -54,7 +54,7 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
                 <h2 className="text-biruAltera">Profile</h2>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <a href="/" className="p-6">
           <button className="btn bg-orangeAltera w-full border-none font-Inter normal-case hover:bg-red-700">Logout</button>

@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard.jsx";
 import UserList from "../pages/UserList.jsx";
 import ClassList from "../pages/ClassList.jsx";
 import MenteList from "../pages/MenteList.jsx";
+import MenteeLog from "../pages/MenteeLog.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/user-list" element={<UserList />} />
         <Route path="/class-list" element={<ClassList />} />
         <Route path="/mentee-list" element={<MenteList />} />
+        <Route path="/mentee-log" element={<MenteeLog />} />
       </Routes>
     </BrowserRouter>
   );

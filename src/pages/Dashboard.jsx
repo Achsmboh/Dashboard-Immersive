@@ -9,14 +9,14 @@ import { VscFeedback } from "react-icons/vsc";
 function Dashboard() {
   return (
     <Layout>
-      <div className="grid grid-cols-6">
-        <div className="grid">
+      <div className="grid lg:grid-cols-6 ">
+        <div className="lg:grid hidden">
           <Sidebar dashboardFontStyle={"font-bold"} dashboardShadow={"shadow-xl"} />
         </div>
         <div className="grid col-span-5 bg-transparent">
           <div className="bg-abuAltera rounded-r-3xl h-screen overflow-auto">
-            <Navbar title={"Dashboard"} name={"John Doe"} />
-            <div className=" grid grid-cols-3 p-5">
+            <Navbar title={"Dashboard"} />
+            <div className=" grid lg:grid-cols-3 md:grid-cols-3 p-5">
               <div className="bg-white shadow-2xl rounded-lg h-64 m-2 p-3 hover:z-10 transition hover:scale-110">
                 <div className="flex justify-start items-center">
                   <div className="text-biruAltera mx-2">

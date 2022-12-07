@@ -42,6 +42,7 @@ function Login() {
       .then((ress) => {
         const { data, message } = ress.data;
         setCookies("token", data.token, { path: "/" });
+        setCookies("email", data.email, { path: "/" });
         Swal.fire({
           position: "center",
           icon: "success",

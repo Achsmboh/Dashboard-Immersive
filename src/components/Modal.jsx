@@ -3,29 +3,29 @@ import Input from "./Input";
 import { DropDownThree, DropDown } from "./DropDown";
 import { MdModeEdit } from "react-icons/md";
 
-const Modal = ({ title, inputOne, inputTwo, inputThree, inputFour, inputFive }) => {
+const Modal = ({ title, inputOne, inputTwo, inputThree, inputFour, inputFive, disabled, onClick }) => {
   return (
     <>
-      <label htmlFor={`my-modal-6`} className="btn normal-case bg-blue-600 hover:bg-biruAltera">
+      <label htmlFor={`my-modal-6`} disabled={disabled} className={` btn  normal-case bg-blue-600 hover:bg-biruAltera`}>
         + {title}
       </label>
 
       <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-      <div className="modal modal-bottom sm:modal-middle">
+      <div className="modal modal-middle sm:modal-middle">
         <div className="modal-box  flex flex-col justify-center items-center">
-          <h3 className="font-bold text-2xl text-biruAltera text-center font-Inter">{title}</h3>
+          <h3 className="font-bold lg:text-2xl  text-base text-biruAltera text-center font-Inter ">{title}</h3>
           {inputOne}
           {inputTwo}
           {inputThree}
           {inputFour}
           {inputFive}
 
-          <div className="grid grid-cols-2  max-w-md w-full mt-3">
+          <div className="grid grid-cols-2 w-2/3 md:w-full lg:w-full max-w-md mt-3">
             <label htmlFor="my-modal-6" className="btn bg-red-600 normal-case font-Inter border-none mx-1 hover:bg-red-900">
               Cancel
             </label>
 
-            <label htmlFor="my-modal-6" className="btn bg-blue-600 normal-case font-Inter border-none mx-1 hover:bg-biruAltera">
+            <label htmlFor="my-modal-6" onClick={onClick} className="disabled:bg-white btn bg-blue-600 normal-case font-Inter border-none mx-1 hover:bg-biruAltera">
               Add
             </label>
           </div>

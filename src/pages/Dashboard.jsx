@@ -14,7 +14,7 @@ function Dashboard() {
           <Sidebar dashboardFontStyle={"font-bold"} dashboardShadow={"shadow-xl"} />
         </div>
         <div className="grid col-span-5 bg-transparent">
-          <div className="bg-abuAltera rounded-r-3xl h-screen overflow-auto">
+          <div className="bg-abuAltera lg:rounded-r-3xl h-screen overflow-auto">
             <Navbar title={"Dashboard"} />
             <div className=" grid lg:grid-cols-3 md:grid-cols-3 p-5">
               <div className="bg-white shadow-2xl rounded-lg h-64 m-2 p-3 hover:z-10 transition hover:scale-110">

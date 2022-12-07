@@ -10,11 +10,11 @@ import { DropDownTwo } from "../components/DropDown";
 function UserList() {
   return (
     <Layout>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-6">
         <div>
           <Sidebar userShadow={"shadow-lg"} userFontStyle={"font-bold"} />
         </div>
-        <div className="grid col-span-3">
+        <div className="grid col-span-5">
           <div className="bg-abuAltera h-screen overflow-auto rounded-r-3xl">
             <Navbar title={"User List"} name={"John Doe"} />
             <div className=" p-5">

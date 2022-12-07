@@ -8,11 +8,11 @@ import { Navbar } from "../components/Navbar";
 function AddMentee() {
   return (
     <Layout>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-6">
         <div>
           <Sidebar menteeFontStile={"font-bold"} menteeShadow={"shadow-lg"} />
         </div>
-        <div className="col-span-3 bg-abuAltera rounded-r-3xl h-screen overflow-auto">
+        <div className="col-span-5 bg-abuAltera rounded-r-3xl h-screen overflow-auto">
           <Navbar title={"Add New Mentee"} name={"John Doe"} />
           <div className="p-5">
             <div className="bg-white rounded-3xl shadow-lg p-3">

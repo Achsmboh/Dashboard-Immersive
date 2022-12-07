@@ -8,13 +8,13 @@ import { ModalTwo } from "../components/Modal";
 function ClassList() {
   return (
     <Layout>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-6">
         <div>
           <Sidebar classShadow={"shadow-lg"} classFontStyle={"font-bold"} />
         </div>
-        <div className="grid col-span-3">
+        <div className="grid col-span-5">
           <div className="bg-abuAltera h-screen overflow-auto rounded-r-3xl">
-            <Navbar title={"User List"} name={"John Doe"} />
+            <Navbar title={"Class List"} name={"John Doe"} />
             <div className=" p-5">
               <div className="bg-white rounded-lg shadow-lg">
                 <div className="p-3">

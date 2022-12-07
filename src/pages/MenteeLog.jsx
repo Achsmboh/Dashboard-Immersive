@@ -46,11 +46,11 @@ function MenteeLog() {
         </div>
       </div>
       {/* Akhir Modal Edit Log */}
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-6">
         <div>
           <Sidebar menteeFontStile={"font-bold"} menteeShadow={"shadow-lg"} />
         </div>
-        <div className="col-span-3 bg-abuAltera rounded-r-3xl overflow-auto h-screen">
+        <div className="col-span-5 bg-abuAltera rounded-r-3xl overflow-auto h-screen">
           <Navbar name={"John Doe"} title={"Mentee Log"} />
           <div className="p-5 w-full">
             <div className="grid grid-cols-2">

@@ -3,7 +3,7 @@ import { MdDashboard, MdClass } from "react-icons/md";
 import { HiUserGroup, HiUsers } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 
-const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeShadow, userFontStyle, userShadow, classFontStyle, classShadow }) => {
+const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeShadow, userFontStyle, userShadow, classFontStyle, classShadow, profileShadow, profileStyle }) => {
   return (
     <div className="bg-white h-screen  rounded-l-3xl p-3 flex flex-col">
       <div className="h-24 flex justify-center items-center ">
@@ -36,7 +36,7 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
                 <h2 className={`${userFontStyle} text-biruAltera`}>User</h2>
               </div>
             </a>
-            <a href="/class-list" className={`${classShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold hover:z-10 transition hover:scale-105 `}>
+            <a href="/class-list" className={`${classShadow} h-16 rounded-xl flex items-center p-3 m-2 hover:shadow-lg hover:font-bold hover:z-10 transition hover:scale-105 bg-white`}>
               <div className=" flex items-center  h-full">
                 <div className="flex items-center mr-3  h-full text-biruAltera">
                   <MdClass />
@@ -45,13 +45,13 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
               </div>
             </a>
           </div>
-          <a href="/edit-profile" className="px-4 hover:z-10 transition hover:scale-105 ">
+          <a href="/edit-profile" className={`${profileShadow} px-4 hover:z-10 transition hover:scale-105 `}>
             <div className="h-16 rounded-xl flex items-center p-3 m-2">
               <div className=" flex items-center  h-full">
                 <div className="flex items-center mr-3  h-full text-biruAltera">
                   <CgProfile />
                 </div>
-                <h2 className="text-biruAltera">Profile</h2>
+                <h2 className={`${profileStyle} text-biruAltera`}>Profile</h2>
               </div>
             </div>
           </a>

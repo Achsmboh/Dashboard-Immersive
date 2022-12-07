@@ -6,6 +6,7 @@ import { CgProfile } from "react-icons/cg";
 
 export const Navbar = ({ title, name }) => {
   const cookie = useCookies();
+
   return (
     <div className="p-5 z-20 sticky top-1">
       <div className="navbar bg-base-100 rounded-2xl">

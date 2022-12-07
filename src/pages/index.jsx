@@ -19,7 +19,6 @@ function Login() {
   const [cookies, setCookies] = useCookies(["token"]);
 
   const navigate = useNavigate();
-  const swal = require("sweetalert2");
 
   useEffect(() => {
     if (email && password) {
@@ -29,7 +28,7 @@ function Login() {
     }
   }, [email, password]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
     const body = {
@@ -38,11 +37,13 @@ function Login() {
     };
 
     axios
-      .post(`https://virtserver.swaggerhub.com/ACHMADQIZWINI4_1/Immersive-Dashboard-Project/1.0.0/login`, body)
+      .post(`http://54.89.143.211:8080/login`, body)
       .then((ress) => {
+        console.log(ress);
         const { data, message } = ress.data;
-        setCookies("token", data.token, { path: "/" });
-        setCookies("email", data.email, { path: "/" });
+        setCookies("token", data.Token, { path: "/" });
+        setCookies("email", data.Email, { path: "/" });
+        setCookies("role", data.Role, { path: "/" });
         Swal.fire({
           position: "center",
           icon: "success",
@@ -63,7 +64,6 @@ function Login() {
         setLoading(false);
       });
   };
-
   return (
     <Layout>
       <div className="w-full h-full flex justify-center items-center">
@@ -81,13 +81,13 @@ function Login() {
               </div>
             </div>
           </div>
-          <div className="bg-white lg:rounded-r-3xl md:rounded-r-3xl flex justify-center items-center rounded-b-3xl   md:p-3">
+          <div className="bg-white lg:rounded-r-3xl md:rounded-r-3xl flex justify-center items-center lg:rounded-br-3xl rounded-b-3xl   md:p-3">
             <form className="flex flex-col w-full items-center font-Inter" onSubmit={(e) => handleSubmit(e)}>
               <h2 className="lg:text-3xl font-bold lg:text-left md:text-left text-center mt-3 lg:w-2/3  text-biruAltera md:text-2xl">Welcome Back!</h2>
               <Input placeholder={"Your email"} label={"Email :"} type={"text"} onChange={(e) => setEmail(e.target.value)} />
               <Input placeholder={"Your Password"} label={"Password"} type={"password"} onChange={(e) => setPassword(e.target.value)} />
               <div className={"w-full flex justify-center mb-5"}>
-                <CostumButton label={"Sign in"} loading={loading || disabled} />
+                <CostumButton type={"submit"} label={"Sign in"} loading={loading || disabled} />
               </div>
             </form>
           </div>

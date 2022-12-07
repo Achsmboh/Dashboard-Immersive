@@ -7,6 +7,7 @@ const Input = ({ label, placeholder, type, value, w, onChange }) => {
         <span className="label-text font-Inter text-biruAltera">{label}</span>
       </label>
       <input
+        defaultValue={""}
         onChange={onChange}
         type={type}
         placeholder={placeholder}

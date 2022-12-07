@@ -19,9 +19,9 @@ function MenteList() {
           <div className="p-5">
             <div className="bg-white rounded-lg shadow-lg">
               <div className="p-3">
-                <div className="flex justify-end">
+                <a href="/add-mentee" className="flex justify-end">
                   <CostumButtonTwo label={"+ Add New Mentee"} />
-                </div>
+                </a>
                 <div className="grid grid-cols-4">
                   <div className="flex justify-center items-center">
                     <DropDownTwo name={"Class :"} optionOne={"FE 10"} optionTwo={"BE 13"} />

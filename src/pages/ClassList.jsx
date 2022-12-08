@@ -4,8 +4,81 @@ import Sidebar from "../components/Sidebar";
 import { Navbar } from "../components/Navbar";
 import { CardTabelTwo } from "../components/CardTabel";
 import { ModalTwo } from "../components/Modal";
+import Input from "../components/Input";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
+import { useCookies } from "react-cookie";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function ClassList() {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const cookie = useCookies();
+
+  const [name, setClasses] = useState("");
+  const [user_id, setMentor] = useState();
+  const [start_date, setStart] = useState("");
+  const [graduate_date, setEnd] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getAllClass();
+  }, []);
+
+  function getAllClass() {
+    setLoading(true);
+
+    axios
+      .get("http://54.89.143.211:8080/classes", {
+        headers: { Authorization: `Bearer ${cookie[0].token}` },
+      })
+      .then((ress) => {
+        const result = ress.data.data;
+        setData(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
+  function addClass() {
+    setLoading(true);
+    const body = {
+      name,
+      user_id,
+      start_date,
+      graduate_date,
+    };
+    console.log("klik");
+
+    axios
+      .post("http://54.89.143.211:8080/classes", body, { headers: { Authorization: `Bearer ${cookie[0].token}` } })
+      .then((ress) => {
+        const { message } = ress.data;
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/user-list");
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+        });
+      })
+      .finally(() => setLoading(false));
+  }
+
+  console.log(name);
   return (
     <Layout>
       <div className="lg:grid grid-cols-6">
@@ -14,12 +87,18 @@ function ClassList() {
         </div>
         <div className="grid col-span-5">
           <div className="bg-abuAltera h-screen overflow-auto lg:rounded-r-3xl">
-            <Navbar title={"Class List"} name={"John Doe"} />
+            <Navbar title={"Class List"} />
             <div className=" p-5">
               <div className="bg-white rounded-lg shadow-lg">
                 <div className="p-3">
                   <div className="flex lg:justify-end md:justify-end justify-center">
-                    <ModalTwo />
+                    <ModalTwo
+                      onClick={() => addClass()}
+                      input1={<Input onChange={(e) => setClasses(e.target.value)} label={"Class Name :"} placeholder={"Back End Enginer Batch 10"} type={"text"} />}
+                      input2={<Input onChange={(e) => setMentor(e.target.value)} label={"Mentor :"} placeholder={"name"} type={"number"} />}
+                      input3={<Input onChange={(e) => setStart(e.target.value)} label={"Start Date :"} placeholder={"2022-01-25"} type={"text"} />}
+                      input4={<Input onChange={(e) => setEnd(e.target.value)} label={"End Date:"} placeholder={"2022-03-30"} type={"text"} />}
+                    />
                   </div>
                   {/* Tabel Header */}
                   <div className=" grid grid-cols-12 mt-5 mb-1">
@@ -44,8 +123,9 @@ function ClassList() {
                     </div>
                   </div>
                   <div>
-                    <CardTabelTwo no={1} nameClass={"Front End Enginer Batch 10"} mentor={"Mas Bagas"} startClass={"2022-10-24"} endClass={"2022-12-31"} />
-                    <CardTabelTwo no={1} nameClass={"Back End Enginer Batch 13"} mentor={"Mas Fachkri"} startClass={"2022-10-24"} endClass={"2022-12-31"} />
+                    {data?.map((item) => (
+                      <CardTabelTwo key={item.id} no={item.id} nameClass={item.name} mentor={item.PIC} startClass={item.start_date} endClass={item.graduate_date} />
+                    ))}
                   </div>
                   {/* Akhir Tabel Header */}
                 </div>

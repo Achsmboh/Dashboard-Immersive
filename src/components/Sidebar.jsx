@@ -2,8 +2,20 @@ import React from "react";
 import { MdDashboard, MdClass } from "react-icons/md";
 import { HiUserGroup, HiUsers } from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeShadow, userFontStyle, userShadow, classFontStyle, classShadow, profileShadow, profileStyle }) => {
+  const [cookie, removeCookie] = useCookies();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    removeCookie("token");
+    removeCookie("email");
+    removeCookie("role");
+
+    navigate("/");
+  }
   return (
     <div className="bg-white h-screen  rounded-l-3xl p-3 flex flex-col">
       <div className="h-24 flex justify-center items-center ">
@@ -56,8 +68,10 @@ const Sidebar = ({ dashboardFontStyle, dashboardShadow, menteeFontStile, menteeS
             </div>
           </a>
         </div>
-        <a href="/" className="p-6">
-          <button className="btn bg-orangeAltera w-full border-none font-Inter normal-case hover:bg-red-700">Logout</button>
+        <a className="p-6">
+          <button onClick={() => handleLogout()} className="btn bg-orangeAltera w-full border-none font-Inter normal-case hover:bg-red-700">
+            Logout
+          </button>
         </a>
       </div>
     </div>

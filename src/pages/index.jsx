@@ -16,7 +16,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [disabled, setDisabled] = useState(true);
-  const [cookies, setCookies] = useCookies(["token"]);
+  const [cookies, setCookies] = useCookies();
 
   const navigate = useNavigate();
 
@@ -39,11 +39,15 @@ function Login() {
     axios
       .post(`http://54.89.143.211:8080/login`, body)
       .then((ress) => {
-        console.log(ress);
         const { data, message } = ress.data;
-        setCookies("token", data.Token, { path: "/" });
-        setCookies("email", data.Email, { path: "/" });
-        setCookies("role", data.Role, { path: "/" });
+        console.log("data", data);
+        const token = data.Token;
+        const email = data.Email;
+        const role = data.Role;
+
+        setCookies("token", token, { path: "/" });
+        setCookies("email", email, { path: "/" });
+        setCookies("role", role, { path: "/" });
         Swal.fire({
           position: "center",
           icon: "success",
@@ -64,6 +68,7 @@ function Login() {
         setLoading(false);
       });
   };
+
   return (
     <Layout>
       <div className="w-full h-full flex justify-center items-center">
@@ -75,13 +80,13 @@ function Login() {
               </div>
               <div className="grid row-span-5 w-full h-full ">
                 <div className="w-full h-full flex flex-col justify-center items-center">
-                  <img src={fotoLogin} alt="vektor login" className="lg:w-3/4 w-2/4" />
+                  <img src={fotoLogin} alt="vektor login" className="lg:w-2/3 w-2/4" />
                   <h1 className="font-Inter text-biruAltera font-bold lg:text-5xl md:text-3xl text-2xl text-center my-5">Login</h1>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-white lg:rounded-r-3xl md:rounded-r-3xl flex justify-center items-center lg:rounded-br-3xl rounded-b-3xl   md:p-3">
+          <div className="bg-white lg:rounded-r-3xl md:rounded-r-3xl flex justify-center items-center lg:rounded-br-3xl lg:rounded-bl-none rounded-b-3xl   md:p-3">
             <form className="flex flex-col w-full items-center font-Inter" onSubmit={(e) => handleSubmit(e)}>
               <h2 className="lg:text-3xl font-bold lg:text-left md:text-left text-center mt-3 lg:w-2/3  text-biruAltera md:text-2xl">Welcome Back!</h2>
               <Input placeholder={"Your email"} label={"Email :"} type={"text"} onChange={(e) => setEmail(e.target.value)} />

@@ -5,8 +5,12 @@ import Sidebar from "../components/Sidebar";
 import { FiHexagon } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
 import { VscFeedback } from "react-icons/vsc";
+import { useCookies } from "react-cookie";
 
 function Dashboard() {
+  const [cookie, setCookies] = useCookies();
+  console.log("email", cookie.email);
+
   return (
     <Layout>
       <div className="grid lg:grid-cols-6 ">

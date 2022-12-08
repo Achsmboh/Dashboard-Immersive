@@ -8,39 +8,39 @@ import { ModalTwo } from "../components/Modal";
 function ClassList() {
   return (
     <Layout>
-      <div className="grid grid-cols-6">
-        <div>
+      <div className="lg:grid grid-cols-6">
+        <div className="lg:grid hidden">
           <Sidebar classShadow={"shadow-lg"} classFontStyle={"font-bold"} />
         </div>
         <div className="grid col-span-5">
-          <div className="bg-abuAltera h-screen overflow-auto rounded-r-3xl">
+          <div className="bg-abuAltera h-screen overflow-auto lg:rounded-r-3xl">
             <Navbar title={"Class List"} name={"John Doe"} />
             <div className=" p-5">
               <div className="bg-white rounded-lg shadow-lg">
                 <div className="p-3">
-                  <div className="flex justify-end">
+                  <div className="flex lg:justify-end md:justify-end justify-center">
                     <ModalTwo />
                   </div>
                   {/* Tabel Header */}
                   <div className=" grid grid-cols-12 mt-5 mb-1">
                     <div className="text-center">
-                      <p className="text-biruAltera font-Inter font-bold">No</p>
+                      <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">No</p>
                     </div>
                     <div className=" col-span-3 text-center">
-                      <p className="text-biruAltera font-Inter font-bold">Name Class</p>
+                      <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">Name Class</p>
                     </div>
                     <div className=" col-span-3 text-center">
-                      <p className="text-biruAltera font-Inter font-bold">Mentor</p>
+                      <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">Mentor</p>
                     </div>
-                    <div className="col-span-2 text-center">
-                      <p className="text-biruAltera font-Inter font-bold">Start Class</p>
+                    <div className="lg:col-span-2 md:col-span-2 col-span-3 text-center">
+                      <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs ">Start Class</p>
                     </div>
-                    <div className="text-center col-span-2">
-                      <p className="text-biruAltera font-Inter font-bold">End CLass</p>
+                    <div className="text-center col-span-2 lg:grid md:grid hidden">
+                      <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">End CLass</p>
                     </div>
 
-                    <div className=" text-center">
-                      <p className="text-biruAltera font-Inter font-bold">Action</p>
+                    <div className=" text-center lg:col-span-1 md:col-span-1 col-span-2">
+                      <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">Action</p>
                     </div>
                   </div>
                   <div>

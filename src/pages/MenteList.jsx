@@ -10,11 +10,13 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function MenteList() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const cookie = useCookies();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getAllMentees();
@@ -38,6 +40,13 @@ function MenteList() {
       .finally(() => {
         setLoading(false);
       });
+  }
+  function handleMentee(id) {
+    navigate(`/mentee/${id}`, {
+      state: {
+        id: id,
+      },
+    });
   }
 
   return (
@@ -64,7 +73,7 @@ function MenteList() {
                   <div className="flex justify-center items-center">
                     <DropDownTwo name={"Category"} optionOne={"Informatic"} optionTwo={"Non-Informatic"} />
                   </div>
-                  <div className="flex flex lg:justify-end md:justify-end justify-center justify-end lg:items-end md:items-end items-center">
+                  <div className="flex lg:justify-end md:justify-end justify-center lg:items-end md:items-end items-center">
                     <CostumButtonTwo label={"Filter"} />
                   </div>
                 </div>
@@ -96,13 +105,21 @@ function MenteList() {
                 </div>
                 {/* Akhir Tabel Header */}
                 <div>
-                  <Link to={"/mentee-log"}>
-                    {data ? (
-                      data.map((item) => <CardTabelThree no={data.map((datum) => datum.name).indexOf(item.name) + 1} name={item.name} kelas={item.class_name} category={item.education_type} gender={item.gender} status={item.status} />)
-                    ) : (
-                      <></>
-                    )}
-                  </Link>
+                  {data ? (
+                    data.map((item) => (
+                      <CardTabelThree
+                        no={data.map((datum) => datum.name).indexOf(item.name) + 1}
+                        name={item.name}
+                        kelas={item.class_name}
+                        category={item.education_type}
+                        gender={item.gender}
+                        status={item.status}
+                        onDetail={() => handleMentee(item.ID)}
+                      />
+                    ))
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </div>

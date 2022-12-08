@@ -79,9 +79,9 @@ const CardTabelTwo = ({ key, nameClass, mentor, startClass, endClass, no, onClic
   );
 };
 
-const CardTabelThree = ({ name, kelas, category, gender, status, no, key, disabled, onClick }) => {
+const CardTabelThree = ({ name, kelas, category, gender, status, no, key, disabled, onClick, onDetail }) => {
   return (
-    <div key={key} className={`grid grid-cols-12 mt-5 mb-1 bg-abuAltera h-12 rounded-lg hover:z-10 transition hover:scale-105 hover:bg-orangeAltera`}>
+    <div key={key} onClick={onDetail} className={`grid grid-cols-12 mt-5 mb-1 bg-abuAltera h-12 rounded-lg hover:z-10 transition hover:scale-105 hover:bg-orangeAltera`}>
       <div className=" flex items-center justify-center">
         <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">{no}</p>
       </div>

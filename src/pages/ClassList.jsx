@@ -124,7 +124,7 @@ function ClassList() {
                   </div>
                   <div>
                     {data?.map((item) => (
-                      <CardTabelTwo key={item.id} no={item.id} nameClass={item.name} mentor={item.PIC} startClass={item.start_date} endClass={item.graduate_date} />
+                      <CardTabelTwo key={item.id} no={data.map((datum) => datum.name).indexOf(item.name) + 1} nameClass={item.name} mentor={item.PIC} startClass={item.start_date} endClass={item.graduate_date} />
                     ))}
                   </div>
                   {/* Akhir Tabel Header */}

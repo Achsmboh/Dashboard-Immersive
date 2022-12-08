@@ -161,7 +161,7 @@ function UserList() {
                     {data.map((item) => (
                       <CardTabel
                         onClick={() => deleteUser(item.id)}
-                        no={item.id}
+                        no={data.map((datum) => datum.name).indexOf(item.name) + 1}
                         name={item.name}
                         email={item.email}
                         team={item.team}

@@ -18,7 +18,7 @@ function App() {
         <Route path="/user-list" element={<UserList />} />
         <Route path="/class-list" element={<ClassList />} />
         <Route path="/mentee-list" element={<MenteList />} />
-        <Route path="/mentee-log" element={<MenteeLog />} />
+        <Route path="/mentee/:id" element={<MenteeLog />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/add-mentee" element={<AddMentee />} />
       </Routes>

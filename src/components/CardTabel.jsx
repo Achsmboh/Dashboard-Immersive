@@ -98,8 +98,8 @@ const CardTabelThree = ({ name, kelas, category, gender, status, no, key, disabl
         <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">{gender}</p>
       </div>
       <div className="text-center flex lg:col-span-1 md:col-span-1 col-span-2  items-center justify-center">
-        <div className={`${status == "Active" ? "bg-green-200" : "bg-yellow-200"}  rounded-lg w-20 h-5 px-1 flex justify-center items-center`}>
-          <p className={`${status == "Active" ? "text-green-700" : "text-yellow-700"}  font-Inter font-bold lg:text-base md:text-sm text-xs`}>{status}</p>
+        <div className={` rounded-lg w-20 h-5 px-1 flex justify-center items-center`}>
+          <p className={`text-bg-biruAltera  font-Inter font-bold lg:text-base md:text-sm text-xs`}>{status}</p>
         </div>
       </div>
       <div className=" text-center flex lg:col-span-1 md:col-span-1 col-span-2  items-center justify-center w-full ">

@@ -7,7 +7,39 @@ import { DropDownTwo, DropDown } from "../components/DropDown";
 import { CostumButtonTwo } from "../components/CostumButton";
 import { Link } from "react-router-dom";
 
+import { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import axios from "axios";
+
 function MenteList() {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const cookie = useCookies();
+
+  useEffect(() => {
+    getAllMentees();
+  }, []);
+
+  function getAllMentees() {
+    setLoading(true);
+    axios
+      .get("http://54.89.143.211:8080/mentees", {
+        headers: {
+          Authorization: `Bearer ${cookie[0].token}`,
+        },
+      })
+      .then((ress) => {
+        const result = ress.data.data;
+        setData(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
   return (
     <Layout>
       <div className="lg:grid grid-cols-6">
@@ -45,7 +77,7 @@ function MenteList() {
                   <div className="  col-span-3 text-center">
                     <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">Name</p>
                   </div>
-                  <div className="md:col-span-3 lg:col-span-3 col-span-2 text-center bg-blue-100">
+                  <div className="md:col-span-3 lg:col-span-3 col-span-2 text-center ">
                     <p className="text-biruAltera font-Inter font-bold lg:text-base md:text-sm text-xs">Class</p>
                   </div>
                   <div className="col-span-2 text-center">
@@ -65,7 +97,11 @@ function MenteList() {
                 {/* Akhir Tabel Header */}
                 <div>
                   <Link to={"/mentee-log"}>
-                    <CardTabelThree no={1} name={"Jesica World"} kelas={"Front End 10"} category={"IT"} gender={"Male"} status={"active"} />
+                    {data ? (
+                      data.map((item) => <CardTabelThree no={data.map((datum) => datum.name).indexOf(item.name) + 1} name={item.name} kelas={item.class_name} category={item.education_type} gender={item.gender} status={item.status} />)
+                    ) : (
+                      <></>
+                    )}
                   </Link>
                 </div>
               </div>

@@ -4,7 +4,7 @@ const DropDown = ({ name, optionOne, optionTwo, optionThree }) => {
   return (
     <div className="w-2/3 md:w-full lg:w-full flex justify-center flex-col items-center">
       <div className="label-text font-Inter text-biruAltera my-2 lg:self-start  lg:self-start  md:pl-3">{name}</div>
-      <select defaultValue={optionOne} className="select select-bordered w-full max-w-md focus:outline-none bg-abuAltera focus:border-biruAltera focus:ring-1 focus:ring-biruAltera ">
+      <select defaultValue={optionOne} className="select select-bordered w-full max-w-md focus:outline-none bg-abuAltera focus:border-biruAltera focus:ring-1 focus:ring-biruAltera">
         <option disabled selected className="text-biruAltera">
           <span className="text-biruAltera">Choose Your Choice</span>
         </option>
@@ -20,7 +20,7 @@ const DropDown = ({ name, optionOne, optionTwo, optionThree }) => {
 
 const DropDownTwo = ({ onChange, name, optionOne, optionTwo }) => {
   return (
-    <div className="w-2/3 md:w-full lg:w-full flex justify-center flex-col bg-red-100 items-center">
+    <div className="w-2/3 md:w-full lg:w-full flex justify-center flex-col  items-center">
       <div className="label-text font-Inter text-biruAltera lg:self-start lg:self-start  my-2  md:pl-3">{name}</div>
       <select onChange={onChange} className="select select-bordered w-full max-w-md focus:outline-none bg-abuAltera focus:border-biruAltera focus:ring-1 focus:ring-biruAltera ">
         <option disabled selected className="text-biruAltera">

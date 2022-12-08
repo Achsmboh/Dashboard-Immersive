@@ -3,9 +3,18 @@ import { useCookies } from "react-cookie";
 import { HiUsers, HiUserGroup } from "react-icons/hi";
 import { MdDashboard, MdClass } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = ({ title, name }) => {
-  const cookie = useCookies();
+  const [cookie, removeCookie] = useCookies();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    removeCookie("token");
+    removeCookie("name");
+    removeCookie("role");
+    navigate("/");
+  }
 
   return (
     <div className="p-5 z-20 sticky top-1">
@@ -20,11 +29,7 @@ export const Navbar = ({ title, name }) => {
           <div className="mr-5">
             <div className="lg:grid md:grid hidden">
               <h3 className="text-biruAltera font-Inter">Hallo,</h3>
-              <h3 className="text-biruAltera font-Inter font-bold">
-                {cookie.map((item) => {
-                  return item.email;
-                })}
-              </h3>
+              <h3 className="text-biruAltera font-Inter font-bold">{cookie.email}</h3>
             </div>
           </div>
           <div className="dropdown dropdown-end">
@@ -75,7 +80,9 @@ export const Navbar = ({ title, name }) => {
                 </a>
               </li>
               <li>
-                <a className="text-biruAltera font-Inter">Logout</a>
+                <button onClick={() => handleLogout()} className="text-biruAltera font-Inter">
+                  Logout
+                </button>
               </li>
             </ul>
           </div>

@@ -5,7 +5,7 @@ import { Navbar } from "../components/Navbar";
 import { CardTabelThree } from "../components/CardTabel";
 import { DropDownTwo, DropDown } from "../components/DropDown";
 import { CostumButtonTwo } from "../components/CostumButton";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
@@ -49,6 +49,34 @@ function MenteList() {
     });
   }
 
+  function deleteMentee(id) {
+    setLoading(true);
+    axios
+      .delete(`http://54.89.143.211:8080/mentees/${id}`, {
+        headers: {
+          Authorization: `Bearer ${cookie[0].token}`,
+        },
+      })
+      .then((ress) => {
+        const { message } = ress.data;
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        getAllMentees();
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+        });
+      })
+      .finally(() => setLoading(false));
+  }
   return (
     <Layout>
       <div className="lg:grid grid-cols-6">
@@ -108,6 +136,7 @@ function MenteList() {
                   {data ? (
                     data.map((item) => (
                       <CardTabelThree
+                        onClick={() => deleteMentee(item.ID)}
                         no={data.map((datum) => datum.name).indexOf(item.name) + 1}
                         name={item.name}
                         kelas={item.class_name}

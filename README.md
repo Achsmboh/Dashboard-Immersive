@@ -1,3 +1,27 @@
+<h1 align="center">Dashboard Immersive</h1>
+<h3 align="center">Link Deploy : https://dashboard-immersive.netlify.app/</h3>
+
+## About Project
+
+Project ini adalah hasil kolaborasi antara team Front End dan team Back End yang membuat tentang dashboard immersive.
+
+* Group 2 Project 3: Airbnb App Project
+
+1. Achmad Maulana Achsan (FE)
+2. Arif Fiana (FE)
+3. Aziz Wahyudin (BE) 
+4. Achmad Qiswani (BE)
+
+### Built With
+
+* ReactJS
+* Tailwind
+* DaisyUI
+* Axios
+* React Icons
+* react-cookie
+* Sweetalert2
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
